@@ -1,0 +1,57 @@
+// font
+$font-family-lato: 'Lato', sans-serif;
+$font-family-latosemibold: 'LatoSemibold', sans-serif;
+$font-family-latobold: 'LatoBold', sans-serif;
+$line-height: 1.4;
+// colors
+$color-purple: #7d2078;
+$color-purple-selected: #814371;
+$color-purple-dark: #641960;
+$color-pink: #cb287d;
+$color-black: #000000;
+$color-black-2: rgba(0, 0, 0, 0.2);
+$color-black-4: rgba(0, 0, 0, 0.4);
+$color-black-6: #666666;
+$color-white: #ffffff;
+$color-grey-light: #f2f2f2;
+$color-yellow: #f6c432;
+$color-yellow-dark: #cc9e14;
+$color-blue: #21a690;
+$color-blue-2: #4a90e2;
+$color-blue-dark: #1a8573;
+$color-background: #eaeaea;
+$color-red: #cc0000;
+$color-green: #0abc00;
+$color-b2b: #21a690;
+$color-bg2: #eaeaea;
+
+// margins
+$margin-8: 8px;
+$padding-8: 8px;
+$margin-16: 16px;
+$padding-16: 16px;
+$margin-24: 24px;
+$padding-24: 24px;
+$margin-32: 32px;
+$padding-32: 32px;
+
+// responsive mode
+$responsive-mode: 'fixed'; // options: 'fluid' or 'fluid-fixed'
+
+// break points
+$phone: 320px;
+$phablet: 480px;
+$tablet: 768px;
+$tablet-landscape: 1024px;
+$desktop: 1200px;
+
+// grid
+$column-number: 12;
+$column-gap: 13px;
+$width-grid: 951px;
+
+// image path
+$image-path: '/images/css/';
+
+// retina image suffix
+$image-suffix: '@2x';

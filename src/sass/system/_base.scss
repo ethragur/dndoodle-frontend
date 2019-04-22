@@ -1,0 +1,53 @@
+* {
+    @include css3-prefix(box-sizing, border-box);
+    -moz-osx-font-smoothing: grayscale;
+    webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: #eaeaea;
+    color: $color-black;
+    font-family: $font-family-lato;
+    font-size: 14px;
+    line-height: $line-height;
+    text-align: left;
+    &.purple {
+        background-color: $color-purple-dark;
+    }
+}
+
+.clearfix {
+    @include clearfix();
+}
+
+.mobile-hide {
+    
+    display: block;
+    
+    @include breakpoint(tablet) {
+        display: none !important;
+    }
+    
+}
+
+.mobile-show {
+    
+    display: none;
+    
+    @include breakpoint(tablet) {
+        display: block;
+    }
+    
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $color-black;
+    margin: 14px auto;
+    padding: 0;
+    &.dashed {
+        border-style: dashed;
+    }
+}
