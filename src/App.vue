@@ -19,6 +19,11 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  mounted() {
+    if(document.getElementById('app')) {
+      this.$store.dispatch('auth/fetchAuthUser', '12345');
+    }
   }
 }
 </script>

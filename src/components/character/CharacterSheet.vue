@@ -2,12 +2,15 @@
   <Holder>
     <div
       class="mt-5">
-      do gea shu
+      <p>do gea shu</p>
+      <p>ID: {{ authUserId }}</p>
     </div>
   </Holder>
 </template>
 
 <script>
+
+import { mapGetters } from 'vuex';
 
 import Holder from '../templates/Holder.vue'
 
@@ -15,6 +18,11 @@ export default {
   name: 'CharacterSheet',
   components: {
     Holder,
+  },
+  computed: {
+    ...mapGetters('auth', [
+      'authUserId',
+    ]),
   }
 };
 </script>
