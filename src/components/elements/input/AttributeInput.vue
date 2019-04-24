@@ -1,15 +1,17 @@
 <template>
-  <div>
+  <div class="flex items-centered">
     <label
+      class="w-4/5"
       v-text="label"
       :for="label">
     </label>
     <input
-      :id="label"
+      class="w-1/5 text-center cursor-default"
       :name="label"
+      :value="value"
       :readonly="isReadonly"
       type="number"
-      >
+    >
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`bg-${color} px-${paddingX} py-${paddingY} rounded ` + computedClass"
+    :class="`bg-${color} px-${paddingX} py-${paddingY} rounded ${margin ? 'mb-4' : ''}`"
   >
     <slot />
   </div>
@@ -25,12 +25,8 @@ export default {
     paddingY: {
       type: Number,
       default: 3
-    }
+    },
   },
-  computed: {
-    computedClass() {
-      return this.margin ? 'mb-4' : '';
-    }
-  }
+  
 };
 </script>

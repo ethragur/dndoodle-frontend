@@ -1,8 +1,8 @@
-* {
-    @include css3-prefix(box-sizing, border-box);
-    -moz-osx-font-smoothing: grayscale;
-    webkit-font-smoothing: antialiased;
-}
+//* {
+//    @include css3-prefix(box-sizing, border-box);
+//    -moz-osx-font-smoothing: grayscale;
+//    webkit-font-smoothing: antialiased;
+//}
 
 body {
     background: #eaeaea;
@@ -16,27 +16,19 @@ body {
     }
 }
 
-.clearfix {
-    @include clearfix();
-}
+//.clearfix {
+//    @include clearfix();
+//}
 
 .mobile-hide {
     
     display: block;
-    
-    @include breakpoint(tablet) {
-        display: none !important;
-    }
     
 }
 
 .mobile-show {
     
     display: none;
-    
-    @include breakpoint(tablet) {
-        display: block;
-    }
     
 }
 
