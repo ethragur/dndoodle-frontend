@@ -11,6 +11,7 @@
       :value="value"
       :readonly="isReadonly"
       type="number"
+      @input="$emit('input', $event.target.value)"
     >
   </div>
 </template>
@@ -20,7 +21,7 @@ export default {
   name: 'AttributeInput',
   props: {
     value: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     label: {

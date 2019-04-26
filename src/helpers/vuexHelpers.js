@@ -1,6 +1,6 @@
 export function vuexGetterSetters(namespace, ...getSet) {
-  let fns = {};
   console.log(getSet);
+  let fns = {};
   getSet.forEach((item) => {
     if(Array.isArray(item) && item.length === 2) {
       fns[ item[ 0 ] ] = {
@@ -9,7 +9,7 @@ export function vuexGetterSetters(namespace, ...getSet) {
         },
         set(value) {
           this.$store.commit(`${namespace}/${item[ 1 ]}`, value);
-        }
+        },
       };
     }
     else if(Array.isArray(item) && item.length === 1) {
@@ -24,7 +24,7 @@ export function vuexGetterSetters(namespace, ...getSet) {
     }
   });
   for(let key in fns) {
-    //fns[key].vuex = true;
+    fns[key].vuex = true;
   }
   console.log(fns);
   return fns;

@@ -2,8 +2,8 @@
   <div>
     <Holder margin>
       <div class="flex justify-between items-centered mb-3">
-        <h2>{{ selectedCharacter.name }}</h2>
-        <h2>{{ `Level ${selectedCharacter.level} ${selectedCharacter.class}` }}</h2>
+        <h2>{{ character.name }}</h2>
+        <h2>{{ `Level ${character.level} ${character.class}` }}</h2>
       </div>
       <div class="flex justify-between items-centered">
         <p>
@@ -65,6 +65,7 @@
 
 <script>
 import { vuexGetterSetters } from '../../helpers/vuexHelpers';
+import { getSets } from '../../store/forms/characterForm';
 import Holder from '../templates/Holder.vue'
 
 import AttributeInput from '../elements/input/AttributeInput.vue'
@@ -75,18 +76,18 @@ export default {
     Holder,
     AttributeInput,
   },
+  data() {
+    return {
+      getSets: getSets,
+    }
+  },
   computed: {
     ...vuexGetterSetters('auth',
       'authUserId',
     ),
     ...vuexGetterSetters('characters',
-      'selectedCharacter',
-      ['strength', 'strength'],
-      ['dexterity', 'dexterity'],
-      ['constitution', 'constitution'],
-      ['intelligence', 'intelligence'],
-      ['wisdom', 'wisdom'],
-      ['charisma', 'charisma'],
+      'character',
+      ...getSets,
     ),
   }
 };
