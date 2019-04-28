@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-centered">
     <label
-      class="w-4/5"
+      class="w-3/5"
       v-text="label"
       :for="label">
     </label>
@@ -10,9 +10,15 @@
       :name="label"
       :value="value"
       :readonly="isReadonly"
+      max="30"
+      min="0"
       type="number"
       @input="$emit('input', $event.target.value)"
+      @keydown.prevent
     >
+    <span class="w-1/5 text-center cursor-default">
+      {{ modifier }}
+    </span>
   </div>
 </template>
 
@@ -41,6 +47,12 @@ export default {
   computed: {
     isReadonly() {
       return this.edit && this.readonly;
+    },
+    modifier() {
+      let num = Math.floor((Number(this.value) -10) / 2);
+      return num > 0
+        ? `+${num}`
+        : num;
     }
   }
 };
