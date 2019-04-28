@@ -27,31 +27,7 @@
     <div class="flex -mx-2">
       <div class="w-1/2 px-2">
         <Holder class="h-full">
-          <h3 class="mb-4">Ability Scores</h3>
-          <AttributeInput
-            v-model="strength"
-            class="mb-3"
-            label="Strength"/>
-          <AttributeInput
-            v-model="dexterity"
-            class="mb-3"
-            label="Dexterity"/>
-          <AttributeInput
-            v-model="constitution"
-            class="mb-3"
-            label="Constitution"/>
-          <AttributeInput
-            v-model="intelligence"
-            class="mb-3"
-            label="Intelligence"/>
-          <AttributeInput
-            v-model="wisdom"
-            class="mb-3"
-            label="Wisdom"/>
-          <AttributeInput
-            v-model="charisma"
-            class="mb-3"
-            label="Charisma"/>
+          <AbilityScoreList/>
         </Holder>
       </div>
       <div class="w-1/2 px-2">
@@ -74,14 +50,14 @@ import { vuexGetterSetters } from '../../helpers/vuexHelpers';
 import { getSets } from '../../store/forms/characterForm';
 import Holder from '../templates/Holder.vue'
 
-import AttributeInput from '../elements/input/AttributeInput.vue';
+import AbilityScoreList from '../statlists/AbilityScoreList.vue'
 import SkillDisplay from '../elements/display/SkillDisplay.vue';
 
 export default {
   name: 'CharacterSheet',
   components: {
     Holder,
-    AttributeInput,
+    AbilityScoreList,
     SkillDisplay,
   },
   data() {
