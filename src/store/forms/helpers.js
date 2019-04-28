@@ -1,5 +1,3 @@
-import { getters } from './characterForm';
-
 export function generateGetters(object, key = '', attributePath = '', initial = true) {
   if(initial) {
     if(key !== '' && object.hasOwnProperty(key)) {
@@ -12,7 +10,7 @@ export function generateGetters(object, key = '', attributePath = '', initial = 
     if(!Array.isArray(object[attribute]) && typeof(object[attribute]) === 'object') {
       getters = { ...getters, ...generateGetters(object[ attribute ], key, attributePath.concat(`${attribute}.`), false) }
     }
-    else if(attributePath === '') {
+    if(attributePath === '') {
       getters[ attribute ] = function (state) {
         return key
           ? state[key][ attribute ]
@@ -20,13 +18,11 @@ export function generateGetters(object, key = '', attributePath = '', initial = 
       };
     }
     else {
-      console.log('state.'.concat(key, key ? '.' : '', attributePath, attribute));
       getters[attribute] = function (state) {
         return eval('state.'.concat(key, key ? '.' : '', attributePath, attribute));
       }
     }
   });
-  console.log(getters);
   return getters;
 }
 
@@ -48,13 +44,11 @@ export function generateSetters(object, key = '', attributePath = '', initial = 
       };
     }
     else {
-      console.log('state.'.concat(key, key ? '.' : '', attributePath, attribute));
       setters[attribute] = function (state, value) {
         return Vue.set(eval('state.'.concat(key, key ? '.' : '', attributePath).slice(0, -1)), attribute, value);
       }
     }
   });
-  console.log(setters);
   return setters;
 }
 
