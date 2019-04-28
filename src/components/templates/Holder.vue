@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'HolderFrame',
+  name: 'Holder',
   props: {
     color: {
       type: String,
