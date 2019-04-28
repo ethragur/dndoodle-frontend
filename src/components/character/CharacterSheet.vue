@@ -56,7 +56,13 @@
       </div>
       <div class="w-1/2 px-2">
         <Holder class="h-full">
-          test
+          <h3 class="mb-4">Skills</h3>
+          <SkillDisplay
+            v-for="(skill, skillName) in skills"
+            :key="skillName"
+            :value="skill"
+            :proficiency="'Proficient'"
+            :name="skillName" />
         </Holder>
       </div>
     </div>
@@ -68,13 +74,15 @@ import { vuexGetterSetters } from '../../helpers/vuexHelpers';
 import { getSets } from '../../store/forms/characterForm';
 import Holder from '../templates/Holder.vue'
 
-import AttributeInput from '../elements/input/AttributeInput.vue'
+import AttributeInput from '../elements/input/AttributeInput.vue';
+import SkillDisplay from '../elements/display/SkillDisplay.vue';
 
 export default {
   name: 'CharacterSheet',
   components: {
     Holder,
     AttributeInput,
+    SkillDisplay,
   },
   data() {
     return {
