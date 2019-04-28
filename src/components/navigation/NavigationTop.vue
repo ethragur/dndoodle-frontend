@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'NavigationTop.vue',
+  name: 'NavigationTop',
   props: {
     color: {
       type: String,
